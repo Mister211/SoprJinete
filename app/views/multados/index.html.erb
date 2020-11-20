@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Multados</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Valor</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Prestamo</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @multados.each do |multado| %>
+      <tr>
+        <td><%= multado.valor %></td>
+        <td><%= multado.fecha %></td>
+        <td><%= multado.estado %></td>
+        <td><%= multado.Prestamo_id %></td>
+        <td><%= link_to 'Show', multado,:class => "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_multado_path(multado),:class => "btn btn-success" %></td>
+        <td><%= link_to 'Destroy', multado, method: :delete,:class => "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Multado', new_multado_path,:class => "btn btn-dark" %>

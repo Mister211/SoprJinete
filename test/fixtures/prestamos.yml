@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: MyString
+  estado: MyString
+  Usuario: one
+
+two:
+  fecha: MyString
+  estado: MyString
+  Usuario: two

@@ -1,0 +1,32 @@
+<%= form_with(model: detalle, local: true) do |form| %>
+  <% if detalle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(detalle.errors.count, "error") %> prohibited this detalle from being saved:</h2>
+
+      <ul>
+        <% detalle.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cantidad %>
+    <%= form.text_field :cantidad,:class => "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Prestamo_id %>
+    <%= form.select :Prestamo_id, options_for_select(Prestamo.all.map{|s|[s.id]}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Libro_id %>
+    <%= form.select :Libro_id, options_for_select(Libro.all.map{|s|[s.titulo, s.id]}) %>
+  </div>
+
+  <div class="actions ">
+    <%= form.submit %>
+  </div>
+<% end %>

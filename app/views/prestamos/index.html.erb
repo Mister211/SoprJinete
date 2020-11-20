@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Prestamos</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Fecha</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Usuario</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prestamos.each do |prestamo| %>
+      <tr>
+        <td><%= prestamo.fecha %></td>
+        <td><%= prestamo.estado %></td>
+        <td><%= prestamo.Usuario_id %></td>
+        <td><%= link_to 'Show', prestamo,:class => "btn btn-info"  %></td>
+        <td><%= link_to 'Edit', edit_prestamo_path(prestamo), :class => "btn btn-success" %></td>
+        <td><%= link_to 'Destroy', prestamo, method: :delete, :class => "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prestamo', new_prestamo_path,:class => "btn btn-dark" %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Detalles</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Prestamo</th>
+      <th scope="col">Libro</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @detalles.each do |detalle| %>
+      <tr>
+        <td><%= detalle.cantidad %></td>
+        <td><%= detalle.Prestamo_id %></td>
+        <td><%= detalle.Libro_id %></td>
+        <td><%= link_to 'Show', detalle,:class => "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_detalle_path(detalle),:class => "btn btn-success" %></td>
+        <td><%= link_to 'Destroy', detalle, method: :delete,:class => "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Detalle', new_detalle_path,:class => "btn btn-dark" %>

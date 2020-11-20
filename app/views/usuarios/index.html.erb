@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Usuarios</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Login</th>
+      <th scope="col">Password</th>
+      <th scope="col">Email</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+        <td><%= usuario.nombres %></td>
+        <td><%= usuario.apellidos %></td>
+        <td><%= usuario.direccion %></td>
+        <td><%= usuario.telefono %></td>
+        <td><%= usuario.login %></td>
+        <td><%= usuario.password %></td>
+        <td><%= usuario.email %></td>
+        <td><%= link_to 'Show', usuario,:class => "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_usuario_path(usuario), :class => "btn btn-success" %></td>
+        <td><%= link_to 'Destroy', usuario, method: :delete,:class => "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Usuario', new_usuario_path,:class => "btn btn-dark" %>
