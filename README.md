@@ -1,4 +1,12 @@
 # README
+**Clonar**<br>
+git clone https://github.com/Omyy27/Pruebaa.git
+
+**Arreglar gemas luego de clonar** <br>
+bundle install
+
+**Arreglar Yarn**<br>
+yarn install --check files
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
